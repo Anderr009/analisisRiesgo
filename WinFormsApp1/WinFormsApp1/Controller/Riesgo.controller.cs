@@ -29,6 +29,21 @@ namespace WinFormsApp1.Controller
             }
             return risk;
         }
+        public String prueba()
+        {
+            try
+            {
+                using (var context = new Context())
+                {
+                    int count = context.riesgo.Count();
+                    return "Funciono";
+                }
+            }catch(Exception ex)
+            {
+                return ex.Message;
+            }
+           
+        }
         public bool insertRiesgo(Riesgo risk)
         {
             try
