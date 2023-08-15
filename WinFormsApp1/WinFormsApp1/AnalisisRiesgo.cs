@@ -1,7 +1,14 @@
+using System.Reflection;
 using System.Windows.Forms;
 using WinFormsApp1.Controller;
+using WinFormsApp1.Models;
 using WinFormsApp1.Models.Agresion;
+using WinFormsApp1.Models.Extension;
+using WinFormsApp1.Models.Funcion;
+using WinFormsApp1.Models.Profundidad;
 using WinFormsApp1.Models.Riesgo;
+using WinFormsApp1.Models.Vulnerabilidad;
+
 namespace WinFormsApp1
 {
     public partial class AnalisisRiesgo : Form
@@ -34,7 +41,7 @@ namespace WinFormsApp1
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -234,6 +241,31 @@ namespace WinFormsApp1
 
         }
 
-
+        private void btnGuardarF2_Click(object sender, EventArgs e)
+        {
+            Extension extension = new Extension();
+            extension.valoration = int.Parse(txtExtencion.Text);
+            new ExtensionCtrl().insertExtension(extension);
+            //
+            Profundidad prof = new Profundidad();
+            prof.valoration = int.Parse(txtProfundidad.Text);
+            new ProfundidadCtrl().insertProfundidad(prof);
+            //
+            Vulnerabilidad vuln = new Vulnerabilidad();
+            vuln.valoration = int.Parse(txtVulnerabilidad.Text);
+            new VulnerabilidadCtrl().insertVulnerabilidad(vuln);
+            //
+            Funcion func = new Funcion();
+            func.valoration = int.Parse(txtFuncion.Text);
+            new FuncionCtrl().insertFuncion(func);
+            //
+            Agresion agr = new Agresion();
+            agr.valoration = int.Parse(txtAgresion.Text);
+            new AgresionCtrl().insertAgresion(agr);
+            //
+            Sustitucion sus = new Sustitucion();
+            sus.valoration = int.Parse(txtSustitucion.Text);
+            new SustitucionCtrl().inserSustitucion(sus);
+        }
     }
 }

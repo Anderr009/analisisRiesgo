@@ -11,6 +11,8 @@ using WinFormsApp1.Models.Riesgo;
 using WinFormsApp1.Models.Vulnerabilidad;
 using System.Data.SQLite;
 using Microsoft.EntityFrameworkCore;
+using WinFormsApp1.Models;
+
 namespace WinFormsApp1
 {
     public class Context : DbContext
@@ -21,6 +23,7 @@ namespace WinFormsApp1
                 @"Data Source=DBDatos.db");
         }
 
+        public DbSet<Sustitucion> Sust { get; set; }
         public DbSet<Agresion> agresion { get; set; }
         public DbSet<Extension> extension { get; set; }
         public DbSet<Funcion> funcion { get; set; }
