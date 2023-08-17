@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WinFormsApp1.Models
+namespace WinFormsApp1.Models.Sustitucion
 {
     public class Sustitucion
     {

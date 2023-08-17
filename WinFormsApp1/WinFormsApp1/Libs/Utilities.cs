@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WinFormsApp1.Controller;
-using WinFormsApp1.Models;
 using WinFormsApp1.Models.Agresion;
 using WinFormsApp1.Models.Extension;
 using WinFormsApp1.Models.Funcion;
 using WinFormsApp1.Models.Profundidad;
+using WinFormsApp1.Models.Sustitucion;
 using WinFormsApp1.Models.Vulnerabilidad;
 
 namespace WinFormsApp1.Libs
@@ -47,7 +47,7 @@ namespace WinFormsApp1.Libs
             int[] CaractRisk = CaractRiesg();
             int[] ProbR = ProbRisk();
             int[] cuantR = new int[CaractRisk.Length];
-            for(int i = 0;i > CaractRisk.Length; i++)
+            for(int i = 0;i < CaractRisk.Length; i++)
             {
                 cuantR[i] = CaractRisk[i] * ProbR[i];
             }
@@ -57,7 +57,7 @@ namespace WinFormsApp1.Libs
         {
             int[] CR = CuantRisk();
             string[] clasf = new string[CR.Length]; 
-            for(int i = 0; i>CR.Length; i++) 
+            for(int i = 0; i < CR.Length; i++) 
             {
                 if (CR[i] >= 1 && CR[i] <= 250)
                 {

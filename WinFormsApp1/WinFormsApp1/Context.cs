@@ -11,7 +11,7 @@ using WinFormsApp1.Models.Riesgo;
 using WinFormsApp1.Models.Vulnerabilidad;
 using System.Data.SQLite;
 using Microsoft.EntityFrameworkCore;
-using WinFormsApp1.Models;
+using WinFormsApp1.Models.Sustitucion;
 
 namespace WinFormsApp1
 {

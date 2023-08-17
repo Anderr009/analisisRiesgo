@@ -27,6 +27,21 @@ namespace WinFormsApp1.Controller
             }
             return profundidad;
         }
+        public bool RemoveProfundidadById(int id)
+        {
+            //Riesgo? risk = new Riesgo();
+            using (var context = new Context())
+            {
+                var profundidad = context.profundidad.SingleOrDefault(b => b.id == id);
+                if (profundidad != null)
+                {
+                    context.profundidad.Remove(profundidad);
+                    context.SaveChanges();
+                    return true; // Indica que se eliminó exitosamente
+                }
+                return false; // Indica que no se encontró el riesgo con el ID dado
+            }
+        }
         public bool insertProfundidad(Profundidad profundidad)
         {
             try 

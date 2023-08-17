@@ -27,6 +27,23 @@ namespace WinFormsApp1.Controller
             }
             return agresion;
         }
+
+        public bool RemoveAgresionById(int id)
+        {
+            //Riesgo? risk = new Riesgo();
+            using (var context = new Context())
+            {
+                var agresion = context.agresion.SingleOrDefault(b => b.id == id);
+                if (agresion != null)
+                {
+                    context.agresion.Remove(agresion);
+                    context.SaveChanges();
+                    return true; // Indica que se eliminó exitosamente
+                }
+                return false; // Indica que no se encontró el riesgo con el ID dado
+            }
+        }
+
         public bool insertAgresion(Agresion agresion) 
         {
             try {

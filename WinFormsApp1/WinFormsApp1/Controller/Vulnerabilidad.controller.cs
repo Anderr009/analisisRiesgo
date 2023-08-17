@@ -27,6 +27,21 @@ namespace WinFormsApp1.Controller
             }
             return vuln;
         }
+        public bool RemoveVulnerabilidadById(int id)
+        {
+            //Riesgo? risk = new Riesgo();
+            using (var context = new Context())
+            {
+                var Vulnerabilidad = context.vuln.SingleOrDefault(b => b.id == id);
+                if (Vulnerabilidad != null)
+                {
+                    context.vuln.Remove(Vulnerabilidad);
+                    context.SaveChanges();
+                    return true; // Indica que se eliminó exitosamente
+                }
+                return false; // Indica que no se encontró el riesgo con el ID dado
+            }
+        }
         public bool insertVulnerabilidad(Vulnerabilidad vuln)
         {
             try

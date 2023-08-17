@@ -27,6 +27,21 @@ namespace WinFormsApp1.Controller
             }
             return extension;
         }
+        public bool RemoveExtensionById(int id)
+        {
+            //Riesgo? risk = new Riesgo();
+            using (var context = new Context())
+            {
+                var extension = context.extension.SingleOrDefault(b => b.id == id);
+                if (extension != null)
+                {
+                    context.extension.Remove(extension);
+                    context.SaveChanges();
+                    return true; // Indica que se eliminó exitosamente
+                }
+                return false; // Indica que no se encontró el riesgo con el ID dado
+            }
+        }
         public bool insertExtension(Extension extension)
         {
             try
