@@ -174,7 +174,4 @@ D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\b
 D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.AnalisisRiesgo.resources
-D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Fase1.resources
-D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Fase2.resources
-D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Fase3.resources
 D:\Users\anton\Source\Repos\Anderr009\analisisRiesgo\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.CopyComplete

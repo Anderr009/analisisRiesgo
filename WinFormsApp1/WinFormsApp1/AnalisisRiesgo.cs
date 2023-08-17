@@ -28,21 +28,6 @@ namespace WinFormsApp1
             dataGridView1.DataSource = riesgos;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             // Create a new Riesgo object and set its properties
@@ -74,16 +59,6 @@ namespace WinFormsApp1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //RiesgoCtrl riesgoCtrl = new RiesgoCtrl();
@@ -91,99 +66,13 @@ namespace WinFormsApp1
             //dataGridView1.DataSource = riesgos;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void AnalisisRiesgo_Load_1(object sender, EventArgs e)
-        {
-           
-        }
 
         private void ConfigureDataGridView(DataGridView dataGridView)
         {
             dataGridView.AutoGenerateColumns = false;
 
-            
-            
-
         }
 
-        private void btnGuardarF2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -251,6 +140,40 @@ namespace WinFormsApp1
                 int riesgoId = riesgos[i].Id; // Obtén el ID correspondiente de la lista de riesgos
 
                 dataGridView4.Rows.Add(riesgoId, cuantRisk[i], clasificacionData[i]);
+            }
+            dataGridView4.SelectionChanged += (sender, e) =>
+            {
+                dataGridView4.ClearSelection();
+            };
+
+            dataGridView4.CellMouseDown += (sender, e) =>
+            {
+                if (e.RowIndex != -1)
+                {
+                    dataGridView4.Rows[e.RowIndex].Selected = false;
+                }
+            };
+        }
+
+        private void dataGridView4_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Asegúrate de que sea una fila válida
+            {
+                DataGridViewRow row = dataGridView4.Rows[e.RowIndex];
+                string clasificacion = row.Cells["Clasificacion"].Value.ToString();
+
+                if (clasificacion == "Muy pequeño")
+                {
+                    row.DefaultCellStyle.BackColor = Color.Green; // Fila verde
+                }
+                else if (clasificacion == "Pequeño" || clasificacion == "Normal")
+                {
+                    row.DefaultCellStyle.BackColor = Color.Yellow; // Fila amarilla
+                }
+                else if (clasificacion == "Grande" || clasificacion == "Elevado")
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red; // Fila roja
+                }
             }
         }
 
@@ -328,7 +251,7 @@ namespace WinFormsApp1
             int[] cuantRisk = utilities.CuantRisk();
 
             dataGridView3.Refresh();
-            ConfigurarDataGridView3();
+            ConfigurarDataGridView3();  
 
             for (int i = 0; i < caractRisk.Length; i++)
             {
@@ -360,6 +283,9 @@ namespace WinFormsApp1
 
             dataGridView4.Refresh();
             MostrarClasificacionEnDataGridView();
+            
+            dataGridView4.CellFormatting += dataGridView4_CellFormatting!;
+            
         }
 
         private bool IsValidNumber(string text, int minValue, int maxValue)
@@ -644,5 +570,7 @@ namespace WinFormsApp1
 
 
         }
+
+        
     }
 }

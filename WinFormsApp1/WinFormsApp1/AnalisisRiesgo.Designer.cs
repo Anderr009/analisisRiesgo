@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalisisRiesgo));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -138,24 +137,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(385, 21);
+            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(492, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 69);
+            this.label1.Size = new System.Drawing.Size(388, 92);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Home ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(572, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 69);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Furnishings";
+            this.label1.Text = "RIXPERT";
             // 
             // label3
             // 
@@ -413,7 +401,6 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabPage1.Location = new System.Drawing.Point(4, 51);
@@ -504,7 +491,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(617, 514);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // txtRid
             // 
@@ -675,7 +661,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView3);
             this.splitContainer2.Size = new System.Drawing.Size(1074, 514);
-            this.splitContainer2.SplitterDistance = 807;
+            this.splitContainer2.SplitterDistance = 740;
             this.splitContainer2.TabIndex = 3;
             // 
             // splitContainer3
@@ -697,8 +683,8 @@
             this.splitContainer3.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer3.Panel2MinSize = 20;
             this.splitContainer3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer3.Size = new System.Drawing.Size(807, 514);
-            this.splitContainer3.SplitterDistance = 506;
+            this.splitContainer3.Size = new System.Drawing.Size(740, 514);
+            this.splitContainer3.SplitterDistance = 405;
             this.splitContainer3.TabIndex = 1;
             // 
             // dataGridView_1
@@ -719,7 +705,7 @@
             this.dataGridView_1.ShowCellToolTips = false;
             this.dataGridView_1.ShowEditingIcon = false;
             this.dataGridView_1.ShowRowErrors = false;
-            this.dataGridView_1.Size = new System.Drawing.Size(506, 514);
+            this.dataGridView_1.Size = new System.Drawing.Size(405, 514);
             this.dataGridView_1.TabIndex = 0;
             // 
             // dataGridView_2
@@ -732,7 +718,7 @@
             this.dataGridView_2.ReadOnly = true;
             this.dataGridView_2.RowHeadersWidth = 51;
             this.dataGridView_2.RowTemplate.Height = 29;
-            this.dataGridView_2.Size = new System.Drawing.Size(297, 514);
+            this.dataGridView_2.Size = new System.Drawing.Size(331, 514);
             this.dataGridView_2.TabIndex = 0;
             // 
             // dataGridView3
@@ -750,7 +736,7 @@
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(263, 514);
+            this.dataGridView3.Size = new System.Drawing.Size(330, 514);
             this.dataGridView3.TabIndex = 0;
             // 
             // tabPage4
@@ -822,6 +808,7 @@
             this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Enabled = false;
             this.dataGridView4.Location = new System.Drawing.Point(0, 266);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
@@ -830,6 +817,7 @@
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.Size = new System.Drawing.Size(531, 248);
             this.dataGridView4.TabIndex = 1;
+            this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
             // dataGridView_3
             // 
@@ -855,7 +843,7 @@
             this.ClientSize = new System.Drawing.Size(1088, 575);
             this.Controls.Add(this.tabControl1);
             this.Name = "AnalisisRiesgo";
-            this.Text = "Form1";
+            this.Text = "Rixpert";
             this.Load += new System.EventHandler(this.AnalisisRiesgo_Load_2);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -908,7 +896,6 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
